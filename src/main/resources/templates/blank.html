@@ -1,0 +1,322 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8"/>
+    <!-- Meta, title, CSS, favicons, etc. -->
+   
+
+    <title>Ma Pharmacie! | </title>
+	 <link th:href="@{css/style.css}" rel="stylesheet"/>
+   <link href="css/style.css" rel="stylesheet"/>
+
+    <!-- Bootstrap -->
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Font Awesome -->
+    <link href="/webjars/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <!-- NProgress -->
+    <!-- <script src="webjars/nprogress/nprogress.js"></script> -->
+    <!-- iCheck -->
+    <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet"/>
+  
+    
+     <!-- Datatables -->
+    <link href="/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet"/>
+    <link href="/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet"/>
+    <link href="/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet"/>
+    <link href="/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet"/>
+    <link href="/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom Theme Style -->
+    <link href="css/custom.min.css" rel="stylesheet"/>
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Ma Pharmacie!</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            
+            <div data-th-replace="fragment/fragment-menu-profil::menu-profil"></div>
+            
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            	
+            	 <div data-th-replace="fragment/fragment-leftmenu::left_menu"></div> 
+            
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            	
+            	<div data-th-replace="fragment/fragment-menu-footer-buttons::menu-footer-btn"></div>
+            
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+        <!-- page content -->
+     <div class="right_col" role="main">
+          
+             <div class="row tile_count">
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <label ><i class="fa fa-group"></i>FOURNISSEURS</label>
+              <div class="count green">5</div>
+             
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <label class="count_top"><i class="glyphicon glyphicon-shopping-cart-5" aria-hidden="true"></i> PRODUITS</label>
+              <div class="count green">3000</div>
+            
+            </div>
+            
+            <!-- <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <label class="count_top"><i class="glyphicon glyphicon-list-alt"></i> C</label>
+              <div class="count green">50</div>
+          </div> -->
+          
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <label class="count_top"><i class="fa fa-user"></i> FAMILLES</label>
+              <div class="count green">10</div>
+                          </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <label class="count_top"><i class="fa fa-user"></i> TOTAL EMPLOYES</label>
+              <div class="count green">6</div>
+             
+            </div>
+            
+            
+            
+             <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                <!--   <div class="x_title">
+                    <h2>E-commerce page design</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div> -->
+                   <div class="clearfix"></div>
+                  <div class="x_content">
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                      <div class="product-image">
+                        <img src="images/mapharmacie.png" alt="..."/>
+                      </div>
+                     <!--  <div class="product_gallery">
+                        <a>
+                          <img src="images/prod-2.jpg" alt="..."/>
+                        </a>
+                        <a>
+                          <img src="images/prod-3.jpg" alt="..."/>
+                        </a>
+                        <a>
+                          <img src="images/prod-4.jpg" alt="..."/>
+                        </a>
+                        <a>
+                          <img src="images/prod-5.jpg" alt="..."/>
+                        </a>
+                      </div> -->
+                    </div>
+            
+        </div>
+        
+        
+        <!-- <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="dashboard_graph x_panel">
+                  <div class="row x_title">
+                    <div class="col-md-6">
+                      <h3>Network Activities <small>Graph title sub-title</small></h3>
+                    </div>
+                    <div class="col-md-6">
+                      <div id="reportrange" class="pull-right" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc">
+                        <i class="glyphicon glyphicon-calendar fa fa-calendar"></i>
+                        <span>December 15, 2017 - January 13, 2018</span> <b class="caret"></b>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="x_content">
+                    <div class="demo-container" style="height:250px">
+                      <div id="chart_plot_03" class="demo-placeholder" style="padding: 0px; position: relative;"><canvas class="flot-base" width="1136" height="350" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 909px; height: 280px;"></canvas><div class="flot-text" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);"><div class="flot-x-axis flot-x1-axis xAxis x1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 135px; top: 264px; left: 15px; text-align: center;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 135px; top: 264px; left: 125px; text-align: center;">2</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 135px; top: 264px; left: 236px; text-align: center;">4</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 135px; top: 264px; left: 346px; text-align: center;">6</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 135px; top: 264px; left: 457px; text-align: center;">8</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 135px; top: 264px; left: 564px; text-align: center;">10</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 135px; top: 264px; left: 674px; text-align: center;">12</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 135px; top: 264px; left: 785px; text-align: center;">14</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 135px; top: 264px; left: 895px; text-align: center;">16</div></div><div class="flot-y-axis flot-y1-axis yAxis y1Axis" style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;"><div class="flot-tick-label tickLabel" style="position: absolute; top: 252px; left: 7px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 220px; left: 7px; text-align: right;">5</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 189px; left: 1px; text-align: right;">10</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 157px; left: 1px; text-align: right;">15</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 126px; left: 1px; text-align: right;">20</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 95px; left: 1px; text-align: right;">25</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 63px; left: 1px; text-align: right;">30</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 32px; left: 1px; text-align: right;">35</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 1px; left: 1px; text-align: right;">40</div></div></div><canvas class="flot-overlay" width="1136" height="350" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 909px; height: 280px;"></canvas><div class="legend"><div style="position: absolute; width: 78px; height: 15px; top: 13px; right: 13px; background-color: rgb(255, 255, 255); opacity: 0.85;"> </div><table style="position:absolute;top:13px;right:13px;;font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(38,185,154);overflow:hidden"></div></div></td><td class="legendLabel">Registrations</td></tr></tbody></table></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+              <div class="clearfix"></div> -->
+              
+             
+
+                    <!-- <div class="col-md-5 col-sm-5 col-xs-12" style="border:0px solid #e5e5e5;">
+
+                      <h3 class="prod_title">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
+
+                      <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terr.</p>
+                     <br> </br>
+
+                      <div class="">
+                        <h2>Available Colors</h2>
+                        <ul class="list-inline prod_color">
+                          <li>
+                            <p>Green</p>
+                            <div class="color bg-green"></div>
+                          </li>
+                          <li>
+                            <p>Blue</p>
+                            <div class="color bg-blue"></div>
+                          </li>
+                          <li>
+                            <p>Red</p>
+                            <div class="color bg-red"></div>
+                          </li>
+                          <li>
+                            <p>Orange</p>
+                            <div class="color bg-orange"></div>
+                          </li>
+
+                        </ul>
+                      </div>
+                    		<br></br>
+
+                      <div class="">
+                        <h2>Size <small>Please select one</small></h2>
+                        <ul class="list-inline prod_size">
+                          <li>
+                            <button type="button" class="btn btn-default btn-xs">Small</button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn btn-default btn-xs">Medium</button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn btn-default btn-xs">Large</button>
+                          </li>
+                          <li>
+                            <button type="button" class="btn btn-default btn-xs">Xtra-Large</button>
+                          </li>
+                        </ul>
+                      </div>
+                      <br></br>
+
+                      <div class="">
+                        <div class="product_price">
+                          <h1 class="price">Ksh80.00</h1>
+                          <span class="price-tax">Ex Tax: Ksh80.00</span>
+                       	 <br></br>
+                        </div>
+                      </div>
+
+                      <div class="">
+                        <button type="button" class="btn btn-default btn-lg">Add to Cart</button>
+                        <button type="button" class="btn btn-default btn-lg">Add to Wishlist</button>
+                      </div>
+
+                      <div class="product_social">
+                        <ul class="list-inline">
+                          <li><a href="#"><i class="fa fa-facebook-square"></i></a>
+                          </li>
+                          <li><a href="#"><i class="fa fa-twitter-square"></i></a>
+                          </li>
+                          <li><a href="#"><i class="fa fa-envelope-square"></i></a>
+                          </li>
+                          <li><a href="#"><i class="fa fa-rss-square"></i></a>
+                          </li>
+                        </ul>
+                      </div>
+					
+                    </div>
+                    
+ -->
+
+                   <!--  <div class="col-md-12">
+
+                      <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                        <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                          <li role="presentation" class="active"><a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Home</a>
+                          </li>
+                          <li role="presentation" class=""><a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Profile</a>
+                          </li>
+                          <li role="presentation" class=""><a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Profile</a>
+                          </li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                          <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
+                              synth. Cosby sweater eu banh mi, qui irure terr.</p>
+                          </div>
+                          <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo
+                              booth letterpress, commodo enim craft beer mlkshk aliquip</p>
+                          </div>
+                          <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+                            <p>xxFood truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui
+                              photo booth letterpress, commodo enim craft beer mlkshk </p>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+        
+        
+        </div>
+        </div>
+        </div>
+     
+    <!-- jQuery -->
+    <script src="webjars/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="webjars/fastclick/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="webjars/nprogress/nprogress.js"></script>
+    
+    <!-- iCheck -->
+    <script src="/vendors/iCheck/icheck.min.js"></script>
+    
+    <script src="/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    
+    <script src="/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="/vendors/pdfmake/build/vfs_fonts.js"></script>
+    
+    <!-- Custom Theme Scripts -->
+    <script src="/js/custom.min.js"></script>
+  
+    
+   
+  </body>
+</html>

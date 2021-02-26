@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Les Mesdicaments</title>
+<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" />
+<!-- Meta, title, CSS, favicons, etc. -->
+
+
+<title>Ma Pharmacie! |</title>
+<link href="css/style.css" rel="stylesheet"/>
+
+<!-- Bootstrap -->
+<link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<!-- Font Awesome -->
+<link href="/webjars/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" />
+<!-- NProgress -->
+<!-- <script src="webjars/nprogress/nprogress.js"></script> -->
+
+<!-- Custom Theme Style -->
+<link href="css/custom.min.css" rel="stylesheet" />
+</head>
+
+<body class="nav-md">
+	<div class="container body">
+		<div class="main_container">
+			<div class="col-md-3 left_col">
+				<div class="left_col scroll-view">
+					<div class="navbar nav_title" style="border: 0;">
+						<a href="index.html" class="site_title"><i class="fa fa-paw"></i>
+							<span>Ma Pharmacie!</span></a>
+					</div>
+
+					<div class="clearfix"></div>
+
+					<!-- menu profile quick info -->
+
+					<div data-th-replace="fragment/fragment-menu-profil::menu-profil"></div>
+
+					<!-- /menu profile quick info -->
+
+					<br />
+
+					<!-- sidebar menu -->
+
+					<div data-th-replace="fragment/fragment-leftmenu::left_menu"></div>
+
+					<!-- /sidebar menu -->
+
+					<!-- /menu footer buttons -->
+
+					<div
+						data-th-replace="fragment/fragment-menu-footer-buttons::menu-footer-btn"></div>
+
+					<!-- /menu footer buttons -->
+				</div>
+			</div>
+
+			<!-- page content -->
+
+
+			<div class="right_col" role="main">
+				<div class="">
+					
+
+
+					<div class="clearfix"></div>
+
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="x_panel">
+								<div class="x_title">
+									<h2>Formulaire de saisi d'un médicament</h2>
+									<ul class="nav navbar-right panel_toolbox">
+										<li><a class="collapse-link"><i
+												class="fa fa-chevron-up"></i></a></li>
+										<li class="dropdown"><a href="#" class="dropdown-toggle"
+											data-toggle="dropdown" role="button" aria-expanded="false"><i
+												class="fa fa-wrench"></i></a>
+											<ul class="dropdown-menu" role="menu">
+												<li><a href="#">Settings 1</a></li>
+												<li><a href="#">Settings 2</a></li>
+											</ul></li>
+										<li><a class="close-link"><i class="fa fa-close"></i></a>
+										</li>
+									</ul>
+									<div class="clearfix"></div>
+								</div>
+
+								<div class="x_content">
+									<p class="text-muted font-13 m-b-30"></p>
+									<div class=" container ">
+										<div class="panel panel-primary">
+											<div class="panel-heading panel-default">
+												<h2>Saisie d'un medicament</h2>
+											</div>
+											<div class="panel-body">
+												<form th:action="@{/enregistrer}" method="post" th:object="${medicament}">
+												<input class="form-control" type="hidden" th:field="*{idMedicament}" />
+												
+
+
+													<div class="form-group">
+														<label class="control-label">Libellé:</label> <input
+															class="form-control" type="text" name="libelle"
+															th:field="*{libelle}" />
+													</div>
+
+													<div class="form-group">
+														<label class="control-label">Prix Achat:</label> <input
+															class="form-control" type="text"
+															th:field="*{prixAchat}" />
+													</div>
+
+													<div class="form-group">
+														<label class="control-label">Prix Vente:</label> <input
+															class="form-control" type="text" name="prixVente"
+															th:field="*{prixVente}" />
+													</div>
+
+
+
+													<div class="form-group">
+														<label class="control-label">Quantité:</label> <input
+															class="form-control" type="text" name="quantite"
+															th:field="*{quantite}" />
+													</div>
+
+													<div class="form-group">
+														<label class="control-label">Famille</label> <SELECT
+															class="form-control" name="fam">
+															<tr th:each="f:${famille}">
+																<OPTION th:value="${f.idFamille}" th:text="${f.code}"></OPTION>
+															</tr>
+														</SELECT>
+
+
+
+													</div>
+
+													<div>
+														<button type="submit" class="btn btn-success btn-lg">Enregistrer</button>
+														<button type="reset" class="btn btn-danger btn-lg">Annuler</button>
+													</div>
+												</form>
+											</div>
+										</div>
+									</div>
+									<!-- /page content -->
+
+									<!-- footer content -->
+
+									<!-- <div data-th-replace="fragment/fragment-footer-content :: footer-content"></div>  -->
+
+
+									<!-- /footer content -->
+								</div>
+							</div>
+
+							<!-- jQuery -->
+							<script src="webjars/jquery/jquery.min.js"></script>
+							<!-- Bootstrap -->
+							<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+							<!-- FastClick -->
+							<script src="webjars/fastclick/fastclick.js"></script>
+							<!-- NProgress -->
+							<script src="webjars/nprogress/nprogress.js"></script>
+
+							<!-- Custom Theme Scripts -->
+							<script src="/js/custom.min.js"></script>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<div id="sidebar-menu" class="main_menu_side hidden-print main_menu"
+	data-th-fragment="left_menu">
+	<div class="menu_section">
+		<h3>General</h3>
+		<ul class="nav side-menu">
+			<li><a th:href="@{/blank}"><i class="fa fa-home"></i> Acceuil <span
+					class="fa fa-chevron-down"></span></a>
+			 </li> 
+			<li><a><i class="fa fa-edit"></i> Medicaments<span
+					class="fa fa-chevron-down"></span></a>
+				<ul class="nav child_menu">
+					<li><a th:href="@{/index}">Liste des Medicaments</a></li>
+					<li><a th:href="@{/nouveau}">Ajouter Medicaments</a></li>
+					 <li><a th:href="@{/listfamille}">Familles</a> </li>
+
+				</ul></li>
+			<li><a><i class="fa fa-desktop"></i>Fournisseurs <span
+					class="fa fa-chevron-down"></span></a>
+				<ul class="nav child_menu">
+					<li><a th:href="@{/indexfourni}">Liste des Fournisseurs</a></li>
+					<li><a th:href="@{/nouveaufourni}">Nouveau Fournisseur</a></li>
+
+				</ul></li>
+
+			<li><a><i class="fa fa-desktop"></i>Commandes <span
+					class="fa fa-chevron-down"></span></a>
+				<ul class="nav child_menu">
+					<li><a th:href="@{/nouveaucommande}">Ajouter Commande</a></li>
+					<li><a th:href="@{/commande}">Mes commandes</a></li>
+				<!-- 	<li><a th:href="@{/lignecommande}">Ligne de commande</a></li> -->
+
+				</ul></li>
+
+
+			<li><a><i class="fa fa-table"></i> Stock <span
+					class="fa fa-chevron-down"></span></a>
+				<ul class="nav child_menu">
+					<!-- <li><a th:href="@{/tables}">Etat du Stock</a></li> -->
+					<li><a th:href="@{/statistique}">Statistiques</a></li>
+
+				</ul></li>
+			<li><a><i class="fa fa-bar-chart-o"></i> Ventes<span
+					class="fa fa-chevron-down"></span></a>
+				<ul class="nav child_menu">
+					<li><a th:href="@{/vente}">Etats</a></li>
+
+
+				</ul></li>
+			<li><a><i class="fa fa-clone"></i>Parametrage <span
+					class="fa fa-chevron-down"></span></a>
+				<ul class="nav child_menu">
+					 <li><a th:href="@{/pharmacien}">Utilisateurs</a></li>
+					
+				
+				</ul></li>
+		</ul>
+	</div>
+
+
+</div>

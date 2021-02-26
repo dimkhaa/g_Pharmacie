@@ -1,0 +1,162 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8"/>
+    <!-- Meta, title, CSS, favicons, etc. -->
+   
+    <title>Ma Pharmacie! | </title>
+    <link href="css/style.css" rel="stylesheet"/>
+
+	 <link th:href="@{css/style.css}" rel="stylesheet"/>
+    <!-- Bootstrap -->
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Font Awesome -->
+    <link href="/webjars/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <!-- NProgress -->
+    <!-- <script src="webjars/nprogress/nprogress.js"></script> -->
+    <!-- iCheck -->
+    <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet"/>
+  
+    
+     <!-- Datatables -->
+    <link href="/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet"/>
+    <link href="/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet"/>
+    <link href="/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet"/>
+    <link href="/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet"/>
+    <link href="/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom Theme Style -->
+    <link href="css/custom.min.css" rel="stylesheet"/>
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="blank.html" class="site_title">
+                <i class="fa fa-paw"></i> 
+                <span>Ma Pharmacie!</span>
+              </a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            
+            <div data-th-replace="fragment/fragment-menu-profil::menu-profil"></div>
+            
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            	
+            	 <div data-th-replace="fragment/fragment-leftmenu::left_menu"></div> 
+            
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            	
+            	<div data-th-replace="fragment/fragment-menu-footer-buttons::menu-footer-btn"></div>
+            
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+
+        <!-- page content -->
+     <div class="right_col" role="main">
+          
+            <div class="page-title">
+              
+                         
+
+		 <td><a th:href="@{/nouveau}" class="btn btn-success btn-lg"><i class="fa fa-plus-square btn btn-success "></i >nouveau  meducament</a></td>
+		
+            <div class="row">
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="panel panel-primary">
+                  <div class="panel-heading"> Liste des Medicaments</div>
+                    
+
+                                      
+                  <div class="panel-body">
+                    
+                    <table id="datatable" class="table table-striped table-bordered">
+                      <thead>
+                        <tr>
+                           <th>ID</th>
+                          <th>Libellé</th>
+                          <th>Prix Achat</th>
+                          <th>Prix Vente</th>
+                          <th>Quantité</th>
+                          <th>Famille</th>   
+                           <th>Action</th> 
+                        </tr>
+                      </thead>
+                      
+                      <tbody>
+                        <tr th:each="m:${listMedicaments}">
+                        
+                          <td th:text="${m.idMedicament}"></td>
+                           <td th:text="${m.libelle}"></td>
+                            <td th:text="${m.prixAchat}"></td>
+                             <td th:text="${m.prixVente}"></td>
+                              <td th:text="${m.quantite}"></td>
+                          		<td th:text="${m.famille.code}"></td>      
+
+                          <td><a onclick="return confirm('Etes vous Sure ?')" th:href="@{/admin/Supprimer(id=${m.idMedicament})}"   class="btn btn-danger btn-lg" ><i class="fa fa-trash-o "></i> Supprimer</a>
+												       <a th:href="@{/admin/edit(id=${m.idMedicament})}" class="btn btn-info btn-lg" ><i class="fa fa-pencil "></i>Editer</a></td>
+                         	  						
+                         	 	
+                          </tr>
+                         </tbody>
+                    </table>
+                    </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        
+       
+    <!-- jQuery -->
+    <script src="webjars/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="webjars/fastclick/fastclick.js"></script>
+    <!-- NProgress -->
+    <!-- <script src="webjars/nprogress/nprogress.js"></script> -->
+    
+    <!-- iCheck -->
+    <script src="/vendors/iCheck/icheck.min.js"></script>
+    
+    <script src="/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    
+    <script src="/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="/vendors/pdfmake/build/vfs_fonts.js"></script>
+    
+    <!-- Custom Theme Scripts -->
+    <script src="/js/custom.min.js"></script>
+  
+    
+   
+  </body>
+</html>

@@ -1,0 +1,427 @@
+ <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8"/>
+    <!-- Meta, title, CSS, favicons, etc. -->
+   
+
+    <title>Ma Pharmacie! | </title>
+    <link href="css/style.css" rel="stylesheet"/>
+	 <link th:href="@{css/style.css}" rel="stylesheet"/>
+    <!-- Bootstrap -->
+    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- Font Awesome -->
+    <link href="/webjars/font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
+    <!-- NProgress -->
+    <!-- <script src="webjars/nprogress/nprogress.js"></script> -->
+    <!-- iCheck -->
+    <link href="/vendors/iCheck/skins/flat/green.css" rel="stylesheet"/>
+  
+    
+     <!-- Datatables -->
+    <link href="/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet"/>
+    <link href="/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet"/>
+    <link href="/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet"/>
+    <link href="/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet"/>
+    <link href="/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom Theme Style -->
+    <link href="css/custom.min.css" rel="stylesheet"/>
+  </head>
+
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="blank.html" class="site_title"><i class="fa fa-paw"></i> <span>Ma Pharmacie!</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            
+            <div data-th-replace="fragment/fragment-menu-profil::menu-profil"></div>
+            
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            	
+            	 <div data-th-replace="fragment/fragment-leftmenu::left_menu"></div> 
+            
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            	
+            	<div data-th-replace="fragment/fragment-menu-footer-buttons::menu-footer-btn"></div>
+            
+            <!-- /menu footer buttons -->
+          </div>
+        </div>
+
+
+        <!-- page content -->
+     <div class="right_col" role="main">
+           <div class="row tile_count">
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <label ><i class="fa fa-group"></i>FOURNISSEURS</label>
+              <div class="count green">5</div>
+             
+            </div>
+            
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <label class="count_top"><i class="glyphicon glyphicon-shopping-cart-5" aria-hidden="true"></i> PRODUITS</label>
+              <div class="count green">3000</div>
+            
+            </div>
+            
+            <!-- <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <label class="count_top"><i class="glyphicon glyphicon-list-alt"></i> C</label>
+              <div class="count green">50</div>
+          </div> -->
+          
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <label class="count_top"><i class="fa fa-user"></i> FAMILLES</label>
+              <div class="count green">10</div>
+                          </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+              <label class="count_top"><i class="fa fa-user"></i> TOTAL EMPLOYES</label>
+              <div class="count green">6</div>
+             
+            </div>
+            
+            </div>
+            <div class="clearfix"></div>
+
+             <!-- page content -->
+       
+              <div class="clearfix"></div>
+				 
+            <div class="clearfix"></div>
+
+           <div class="row">
+           
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Graphe Etat Ventes/Stock</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                  <!--lineChart-->
+                    <canvas id="lineChart"></canvas>
+                  </div>
+                </div>
+              </div>
+
+             <div class="row">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="x_panel">
+                  <div class="x_title">
+                    <h2>Diagramme des Fournisseurs en %</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Settings 1</a>
+                          </li>
+                          <li><a href="#">Settings 2</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="close-link"><i class="fa fa-close"></i></a>
+                      </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="x_content">
+                  <!--pieChart-->
+                    <canvas id="pieChart"></canvas>
+                  </div>
+                </div>
+              </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+           
+          
+            </div>
+          </div>
+        </div>
+        
+        
+        
+        <!-- /page content -->
+
+       
+       
+        
+        
+       
+    <!-- jQuery -->
+    <script src="webjars/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="webjars/fastclick/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="webjars/nprogress/nprogress.js"></script>
+    
+    <!-- iCheck -->
+    <script src="/vendors/iCheck/icheck.min.js"></script>
+    
+    <script src="/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    
+    <script src="/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="/vendors/pdfmake/build/vfs_fonts.js"></script>
+    
+    <!-- Custom Theme Scripts -->
+    <script src="/js/custom.min.js"></script>
+    
+    <!-- jQuery -->
+    <script src="/vendors/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="/vendors/fastclick/lib/fastclick.js"></script>
+    <!-- NProgress -->
+    <script src="/vendors/nprogress/nprogress.js"></script>
+    <!-- Chart.js -->
+    <script src="/vendors/Chart.js/dist/Chart.min.js"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="/build/js/custom.min.js"></script>
+  		
+  	<!-- Chart.js -->
+    <script>
+      /*Chart.defaults.global.legend = {
+        enabled: false
+      };*/
+
+      // Line chart
+      var ctx = document.getElementById("lineChart");
+      var lineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: ["January", "February", "March", "April", "May", "June", "July", "Aout", "Septembre", "Octobre", "Novembre", "Decenmbre"],
+          datasets: [{
+            label: "Ventes",
+            backgroundColor: "rgba(38, 185, 154, 0.31)",
+            borderColor: "rgba(38, 185, 154, 0.7)",
+            pointBorderColor: "rgba(38, 185, 154, 0.7)",
+            pointBackgroundColor: "rgba(38, 185, 154, 0.7)",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(22,22,22,1)",
+            pointBorderWidth: 3,
+            data: [31, 74, 6, 39, 20, 85, 7, 66, 9, 99, 4, 2]
+          }, {
+            label: "Stock",
+            backgroundColor: "rgba(3, 88, 106, 0.3)",
+            borderColor: "rgba(3, 88, 106, 0.70)",
+            pointBorderColor: "rgba(3, 88, 106, 0.70)",
+            pointBackgroundColor: "rgba(3, 88, 106, 0.70)",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgba(151,187,205,1)",
+            pointBorderWidth: 1,
+            data: [82, 23, 66, 9, 99, 4, 85, 6, 39, 20, 85, 7]
+          }]
+        },
+      });
+
+  /*     // Bar chart
+      var ctx = document.getElementById("mybarChart");
+      var mybarChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ["January", "February", "March", "April", "May", "June", "July"],
+          datasets: [{
+            label: 'Yes - of Votes',
+            backgroundColor: "#26B99A",
+            data: [51, 30, 40, 28, 92, 50, 45]
+          }, {
+            label: 'No - of Votes',
+            backgroundColor: "#03586A",
+            data: [41, 56, 25, 48, 72, 34, 12]
+          }]
+        },
+
+        options: {
+          scales: {
+            yAxes: [{
+              ticks: {
+                beginAtZero: true
+              }
+            }]
+          }
+        }
+      });
+ */
+      /* // Doughnut chart
+      var ctx = document.getElementById("canvasDoughnut");
+      var data = {
+        labels: [
+          "Dark Grey",
+          "Purple Color",
+          "Gray Color",
+          "Green Color",
+          "Blue Color"
+        ],
+        datasets: [{
+          data: [120, 50, 140, 180, 100],
+          backgroundColor: [
+            "#455C73",
+            "#9B59B6",
+            "#BDC3C7",
+            "#26B99A",
+            "#3498DB"
+          ],
+          hoverBackgroundColor: [
+            "#34495E",
+            "#B370CF",
+            "#CFD4D8",
+            "#36CAAB",
+            "#49A9EA"
+          ]
+
+        }]
+      };
+
+      var canvasDoughnut = new Chart(ctx, {
+        type: 'doughnut',
+        tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+        data: data
+      });
+
+      // Radar chart
+      var ctx = document.getElementById("canvasRadar");
+      var data = {
+        labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+        datasets: [{
+          label: "My First dataset",
+          backgroundColor: "rgba(3, 88, 106, 0.2)",
+          borderColor: "rgba(3, 88, 106, 0.80)",
+          pointBorderColor: "rgba(3, 88, 106, 0.80)",
+          pointBackgroundColor: "rgba(3, 88, 106, 0.80)",
+          pointHoverBackgroundColor: "#fff",
+          pointHoverBorderColor: "rgba(220,220,220,1)",
+          data: [65, 59, 90, 81, 56, 55, 40]
+        }, {
+          label: "My Second dataset",
+          backgroundColor: "rgba(38, 185, 154, 0.2)",
+          borderColor: "rgba(38, 185, 154, 0.85)",
+          pointColor: "rgba(38, 185, 154, 0.85)",
+          pointStrokeColor: "#fff",
+          pointHighlightFill: "#fff",
+          pointHighlightStroke: "rgba(151,187,205,1)",
+          data: [28, 48, 40, 19, 96, 27, 100]
+        }]
+      };
+
+      var canvasRadar = new Chart(ctx, {
+        type: 'radar',
+        data: data,
+      }); */
+
+      // Pie chart
+      var ctx = document.getElementById("pieChart");
+      var data = {
+        datasets: [{
+          data: [12, 35, 14, 18, 21],
+          backgroundColor: [
+            "#455C73",
+            "#9B59B6",
+            "#BDC3C7",
+            "#26B99A",
+            "#3498DB"
+          ],
+          label: 'Fournisseurs' // for legend
+        }],
+        labels: [
+          "Fournisseur 1",
+          "Fournisseur 2",
+          "Fournisseur 3",
+          "Fournisseur 4",
+          "Fournisseur 5"
+        ]
+      };
+
+      var pieChart = new Chart(ctx, {
+        data: data,
+        type: 'pie'/*,
+        options: {
+          legend: false
+        }*/
+      });
+
+   /*    // PolarArea chart
+      var ctx = document.getElementById("polarArea");
+      var data = {
+        datasets: [{
+          data: [120, 50, 140, 180, 100],
+          backgroundColor: [
+            "#455C73",
+            "#9B59B6",
+            "#BDC3C7",
+            "#26B99A",
+            "#3498DB"
+          ],
+          label: 'My dataset'
+        }],
+        labels: [
+          "Dark Gray",
+          "Purple",
+          "Gray",
+          "Green",
+          "Blue"
+        ]
+      };
+
+      var polarArea = new Chart(ctx, {
+        data: data,
+        type: 'polarArea',
+        options: {
+          scale: {
+            ticks: {
+              beginAtZero: true
+            }
+          }
+        }
+      }); */
+    </script>
+    <!-- /Chart.js -->
+    
+   
+  </body>
+</html>

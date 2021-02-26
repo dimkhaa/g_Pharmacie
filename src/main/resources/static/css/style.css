@@ -1,0 +1,9 @@
+.panel-heading{
+	
+	text-align: center;
+	font-size: 2.5em;
+}
+
+.nav.side-menu > li:hover ul.nav.child_menu{
+    display: block !important;
+}
