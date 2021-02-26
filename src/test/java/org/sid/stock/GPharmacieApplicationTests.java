@@ -7,10 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class MonPfeApplicationTests {
+public class GPharmacieApplicationTests {
 
-	@Test
-	public void contextLoads() {
-	}
 
 }
